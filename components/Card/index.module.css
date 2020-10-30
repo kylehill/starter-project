@@ -1,0 +1,42 @@
+.container {
+  padding: 10px;
+}
+
+.border {
+  border: solid 1px black;
+  border-radius: 6px;
+  padding: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.border.red {
+  background: red;
+}
+
+.border.blue {
+  background: blue;
+}
+
+.border.green {
+  background: green;
+}
+
+.border.yellow {
+  background: yellow;
+}
+
+.border.white {
+  background: white;
+}
+
+.internal {
+  background: white;
+  border: solid 1px black;
+  border-radius: 6px;
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 40px;
+}
