@@ -13,18 +13,18 @@ const LandingPage = () => {
       <Head>
         <title>Title TKTKTKTK</title>
       </Head>
-      hey it's my page
+      <h1>hey it's my page</h1>
       <Card
         clickable={true}
         discardable={true}
         card={{ value: 10, color: CardColor.Red }}
-        onClick={() => handleClick({ value: 10, color: CardColor.Red })}
+        onClick={handleClick}
       />
       <Card
         clickable={true}
         discardable={true}
         card={{ value: 15, color: CardColor.Blue }}
-        onClick={() => handleClick({ value: 15, color: CardColor.Blue })}
+        onClick={handleClick}
       />
     </div>
   );

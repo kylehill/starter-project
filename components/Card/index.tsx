@@ -1,28 +1,29 @@
 import React from "react";
+import { useButton } from "react-aria";
 import { CardData } from "types/card";
 
 import styles from "./index.module.css";
 
 type CardProps = {
   card: CardData;
-  onClick?: () => void;
+  onClick?: (card: CardData) => void;
   clickable: boolean;
   discardable: boolean;
 };
 
 const Card = ({ card, onClick, clickable }: CardProps) => {
-  const clickHandler = () => {
-    if (clickable && onClick) {
-      onClick();
-    }
-  };
+  const ref = React.useRef(null);
+  const { buttonProps } = useButton(
+    {
+      onPress: () => clickable && onClick && onClick(card),
+    },
+    ref
+  );
 
   return (
-    <div className={styles.container}>
-      <div className={`${styles.border} ${styles[card.color]}`} onClick={clickHandler}>
-        <div className={styles.internal}>{card.value}</div>
-      </div>
-    </div>
+    <button ref={ref} className={`${styles.border} ${styles[card.color]}`} {...buttonProps}>
+      <div className={styles.internal}>{card.value}</div>
+    </button>
   );
 };
 
